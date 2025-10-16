@@ -1,0 +1,13 @@
+<%- include('../partials/header', { title: 'Editar Usuário' }) %>
+<div class="col-12 col-md-8 col-lg-6">
+  <div class="card shadow-sm">
+    <div class="card-body p-4">
+      <h4 class="mb-3"><i class="bi bi-pencil me-2 text-primary"></i>Editar Usuário</h4>
+      <form method="post" action="/users/<%= user.id %>?_method=PUT">
+        <div class="mb-3"><label class="form-label">Nova senha</label><input class="form-control" name="password" type="password"></div>
+        <button class="btn btn-primary">Atualizar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer') %>
