@@ -1,0 +1,22 @@
+<%- include('../partials/header', { title: 'Editar Aluno' }) %>
+<div class="col-12 col-md-8 col-lg-6">
+  <div class="card shadow-sm">
+    <div class="card-body p-4">
+      <h4 class="mb-3"><i class="bi bi-pencil me-2 text-primary"></i>Editar Aluno</h4>
+      <form method="post" action="/students/<%= student.id %>?_method=PUT">
+        <div class="mb-3"><label class="form-label">Nome</label><input class="form-control" name="name" value="<%= student.name %>" required></div>
+        <div class="mb-3"><label class="form-label">E-mail</label><input class="form-control" name="email" value="<%= student.email %>" type="email"></div>
+        <div class="mb-3"><label class="form-label">Curso</label>
+          <select name="course_id" class="form-select">
+            <option value="">-- nenhum --</option>
+            <% courses.forEach(c => { %>
+              <option value="<%= c.id %>" <%= student.course_id == c.id ? 'selected' : '' %>><%= c.name %></option>
+            <% }) %>
+          </select>
+        </div>
+        <button class="btn btn-primary">Atualizar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer') %>

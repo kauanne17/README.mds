@@ -1,0 +1,14 @@
+<%- include('../partials/header', { title: 'Registrar' }) %>
+<div class="col-12 col-md-8 col-lg-6">
+  <div class="card shadow-sm">
+    <div class="card-body p-4">
+      <h4 class="mb-3"><i class="bi bi-person-plus-fill me-2 text-primary"></i>Registrar</h4>
+      <form method="post" action="/auth/register">
+        <div class="mb-3"><label class="form-label">Usuário</label><input class="form-control" name="username" required></div>
+        <div class="mb-3"><label class="form-label">Senha</label><input class="form-control" name="password" type="password" required></div>
+        <button class="btn btn-primary w-100">Criar conta</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer') %>
